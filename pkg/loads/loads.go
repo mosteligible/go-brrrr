@@ -1,14 +1,16 @@
 package loads
 
 import (
-	"go-brrrr/pkg/types"
 	"sync"
+
+	"github.com/mosteligible/go-brrrr/pkg/types"
 )
 
 type Loader interface {
 	Load(
-		parameters map[string]string,
+		parameters *types.Parameters,
 		mq *types.MetricsQueue,
 		wg *sync.WaitGroup,
+		timeStr string,
 	) error
 }
